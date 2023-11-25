@@ -12,9 +12,8 @@ public class Mistico extends Personagem {
     private int inteligencia;
     private int recuperacao;
 
-    public Mistico(String nome, int pontosVida, int pontosAtaque, int pontosDefesa, String tipoPersonagem,
-                   int inteligencia, int recuperacao) {
-        super(nome, pontosVida, pontosAtaque, pontosDefesa, tipoPersonagem);
+    public Mistico() {
+        super("Mistico", 0, 0, 0, "TipoDePersonagem");
         this.inteligencia = inteligencia;
         this.recuperacao = recuperacao;
     }

@@ -12,12 +12,12 @@ import javax.swing.JOptionPane;
  *
  * @author Aluno
  */
-public class CadastroGuerreiro extends javax.swing.JFrame {
+public class CadastroMistico extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroGuerreiro
      */
-    public CadastroGuerreiro() {
+    public CadastroMistico() {
         initComponents();
         // Gerar um inteiro entre min e max
         int ataque = (int) (Math.random() * (20 - 15 + 1) + 15);
@@ -26,11 +26,11 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         int defesa = (int) (Math.random() * (15 - 10 + 1) + 10);
         txtPontosDefesa.setText("" + defesa);
 
-        int forca = (int) (Math.random() * (10 - 2 + 1) + 2);
-        txtForca.setText("" + forca);
+        int inteligencia = (int) (Math.random() * (10 - 2 + 1) + 2);
+        txtForca.setText("" + inteligencia);
 
-        int velocidade = (int) (Math.random() * (10 - 2 + 1) + 2);
-        txtVelocidade.setText("" + velocidade);
+        int recuperacao = (int) (Math.random() * (10 - 2 + 1) + 2);
+        txtVelocidade.setText("" + recuperacao);
     }
 
     /**
@@ -60,7 +60,7 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Foto do Gueirreiro");
+        jLabel1.setText("Foto do Mistico");
 
         jLabel2.setText("Nome");
 
@@ -98,7 +98,7 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
             }
         });
 
-        jLabel6.setText("Força");
+        jLabel6.setText("Inteligência");
 
         txtForca.setEditable(false);
         txtForca.addActionListener(new java.awt.event.ActionListener() {
@@ -114,9 +114,9 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
             }
         });
 
-        jLabel7.setText("Velocidade");
+        jLabel7.setText("Recuperação");
 
-        jButton1.setText("Salvar Guerreiro");
+        jButton1.setText("Salvar Místico");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -214,15 +214,15 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        Guerreiro guerreiro = new Guerreiro();
+        Mistico guerreiro = new Mistico();
 
         guerreiro.setNome(txtNome.getText());
         guerreiro.setPontosVida(Integer.parseInt(txtPontosVida.getText()));
         guerreiro.setPontosDefesa(Integer.parseInt(txtPontosDefesa.getText()));
         guerreiro.setPontosAtaque(Integer.parseInt(txtPontosAtaque.getText()));
         guerreiro.setTipoPersonagem("TipoDePersonagem");
-        guerreiro.setForca(Integer.parseInt(txtForca.getText()));
-        guerreiro.setVelocidade(Integer.parseInt(txtVelocidade.getText()));
+        guerreiro.setInteligencia(Integer.parseInt(txtForca.getText()));
+        guerreiro.setRecuperacao(Integer.parseInt(txtVelocidade.getText()));
         ;
 
         salvar(guerreiro);
@@ -247,20 +247,21 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroGuerreiro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CadastroMistico.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroGuerreiro().setVisible(true);
+                new CadastroMistico().setVisible(true);
             }
         });
     }
@@ -282,10 +283,10 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
     private javax.swing.JTextField txtVelocidade;
     // End of variables declaration//GEN-END:variables
 
-    private void salvar(Guerreiro guerreiro) {
+    private void salvar(Mistico guerreiro) {
         String sql = "INSERT "
-                + "INTO `tb_guerreiro` "
-                + "(`nome`, `pontosVida`, `pontosAtaque`, `pontosDefesa`, `forca`, `velocidade`) "
+                + "INTO `tb_mistico` "
+                + "(`nome`, `pontosVida`, `pontosAtaque`, `pontosDefesa`, `inteligencia`, `recuperacao`) "
                 + "VALUES "
                 + "(?, ?, ?, ?, ?, ?);";
         try {
@@ -294,8 +295,8 @@ public class CadastroGuerreiro extends javax.swing.JFrame {
             preparacaoDaInstrucao.setInt(2, guerreiro.getPontosVida());
             preparacaoDaInstrucao.setInt(3, guerreiro.getPontosAtaque());
             preparacaoDaInstrucao.setInt(4, guerreiro.getPontosDefesa());
-            preparacaoDaInstrucao.setInt(5, guerreiro.getForca());
-            preparacaoDaInstrucao.setInt(6, guerreiro.getVelocidade());
+            preparacaoDaInstrucao.setInt(5, guerreiro.getInteligencia());
+            preparacaoDaInstrucao.setInt(6, guerreiro.getRecuperacao());
             preparacaoDaInstrucao.executeUpdate();
             JOptionPane.showMessageDialog(this, "Salvo com sucesso!");
             this.dispose(); // libera a memória da janela

@@ -15,12 +15,13 @@ public class Guerreiro extends Personagem {
     private int forca;
     private int velocidade;
 
-  public Guerreiro(String nome, int pontosVida, int pontosAtaque, int pontosDefesa, String tipoPersonagem,
-                     int forca, int velocidade) {
-        super(nome, pontosVida, pontosAtaque, pontosDefesa, tipoPersonagem);
+  public Guerreiro() {
+        super("Guerreiro", 0, 0, 0, "TipoDePersonagem");
         this.forca = forca;
         this.velocidade = velocidade;
     }
+
+    
    @Override
     public void atacar(Personagem adversario) {
         int dano = forca + velocidade - adversario.pontosDefesa;

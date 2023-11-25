@@ -12,7 +12,7 @@ public class Conexao {
 
     private static final String URL = "jdbc:mysql://localhost:3306/kissteria";
     private static final String USUARIO = "root";
-    private static final String SENHA = "root";
+    private static final String SENHA = "alvaro01";
     private static Connection conexao = null;
 
     public static Connection getConexao() throws SQLException {
