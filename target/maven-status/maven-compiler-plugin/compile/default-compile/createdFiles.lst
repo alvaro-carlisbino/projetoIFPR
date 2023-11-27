@@ -1,5 +1,4 @@
 kissteria/VerGuerreiro$8.class
-kissteria/Selecionar_Personagem$3.class
 kissteria/TelaCadastro$4.class
 kissteria/Jogador.class
 kissteria/TelaPlay.class
@@ -10,16 +9,17 @@ kissteria/CadastroGuerreiro$6.class
 kissteria/VerGuerreiro.class
 kissteria/CadastroGuerreiro$3.class
 kissteria/CadastroMistico$3.class
+kissteria/SelecionarPersona$1.class
 kissteria/TelaSelecaoPersonagem.class
 kissteria/VerGuerreiro$5.class
 kissteria/TelaCadastro$1.class
-kissteria/Selecionar_Personagem.class
 kissteria/VerGuerreiro$2.class
 kissteria/CadastroMistico$5.class
 kissteria/CadastroGuerreiro$7.class
 kissteria/CadastroMistico.class
 kissteria/TelaSelecaoPersonagem$2.class
 kissteria/TelaPlay$1.class
+kissteria/SelecionarPersona.class
 kissteria/Mistico.class
 kissteria/CadastroMistico$2.class
 kissteria/TelaCadastro$2.class
@@ -30,10 +30,10 @@ kissteria/VerGuerreiro$3.class
 kissteria/CadastroMistico$1.class
 kissteria/CadastroGuerreiro$1.class
 kissteria/Personagem.class
+kissteria/SelecionarPersona$2.class
 kissteria/TelaPlay$2.class
 kissteria/VerGuerreiro$7.class
 kissteria/Item.class
-kissteria/Selecionar_Personagem$2.class
 kissteria/TelaCadastro.class
 kissteria/CadastroGuerreiro$8.class
 kissteria/CadastroMistico$8.class
@@ -44,6 +44,6 @@ kissteria/CadastroGuerreiro$2.class
 kissteria/TelaCadastro$3.class
 kissteria/VerGuerreiro$4.class
 kissteria/Main.class
+kissteria/SelecionarPersona$3.class
 kissteria/CadastroMistico$4.class
 kissteria/VerGuerreiro$1.class
-kissteria/Selecionar_Personagem$1.class

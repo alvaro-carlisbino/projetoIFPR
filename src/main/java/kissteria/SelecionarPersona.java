@@ -15,13 +15,15 @@ import kissteria.conexao.Conexao;
  *
  * @author bryzzen
  */
-public class Selecionar_Personagem extends javax.swing.JPanel {
+public class SelecionarPersona extends javax.swing.JPanel {
 
     /**
      * Creates new form Selecionar_Personagem
      */
-    public Selecionar_Personagem() {
+    public SelecionarPersona() {
         initComponents();
+
+        
     }
 
     /**
@@ -70,10 +72,11 @@ public class Selecionar_Personagem extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(67, 67, 67)
                         .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(100, 100, 100)
@@ -93,45 +96,47 @@ public class Selecionar_Personagem extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox1AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jComboBox1AncestorAdded
+              
         String sql = "SELECT * FROM tb_guerreiro";
         ArrayList<Guerreiro> guerreiros = new ArrayList<>();
         try {
             PreparedStatement preparacaoDaInstrucao = Conexao.getConexao().prepareStatement(sql);
-            
+
             ResultSet resultrows = preparacaoDaInstrucao.executeQuery();
-            
-            
-            while(resultrows.next()){
+            System.out.println("kissteria.Selecionar_Personagem.jComboBox1AncestorAdded() ADICIONOU AEEE");
+
+            while (resultrows.next()) {
                 Guerreiro guerreiro = new Guerreiro();
-                
+
                 guerreiro.setNome(resultrows.getString("nome"));
                 guerreiro.setPontosAtaque(resultrows.getInt("pontosVida"));
                 guerreiro.setForca(resultrows.getInt("forca"));
                 guerreiro.setPontosDefesa(resultrows.getInt("pontosDefesa"));
                 guerreiro.setPontosVida(resultrows.getInt("pontosVida"));
                 guerreiro.setVelocidade(resultrows.getInt("velocidade"));
-                
+
                 guerreiros.add(guerreiro);
             }
-            
+            resultrows.close();
+
             jComboBox1.removeAll();
-            for(Guerreiro g : guerreiros){
+            for (Guerreiro g : guerreiros) {
                 jComboBox1.addItem(g.getNome());
             }
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, "Erro ao carregar os guerreiros!");
-        }
+        }  
     }//GEN-LAST:event_jComboBox1AncestorAdded
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
